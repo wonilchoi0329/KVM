@@ -1,0 +1,43 @@
+name: Bug report
+description: Report a reproducible non-security problem
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not post vulnerabilities or unredacted verbose diagnostics here. Use GitHub private vulnerability reporting for security issues.
+  - type: textarea
+    id: behavior
+    attributes:
+      label: What happened?
+      description: Describe expected and actual behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: Provide minimal steps. Do not include device serials, display UUIDs, registry paths, usernames, or home-directory paths.
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: HostHop commit
+      placeholder: Full commit SHA
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: macOS version, Mac chip family, and connection type; omit serial numbers.
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Redacted diagnostics
+      description: Prefer normal `HostHop diagnose`. Carefully redact output from `--verbose`.
+      render: shell
