@@ -51,7 +51,7 @@ while IFS= read -r RPATH; do
     fi
 done < <(/usr/bin/otool -l "$MACOS/HostHop" | /usr/bin/awk '$1 == "cmd" && $2 == "LC_RPATH" { getline; getline; print $2 }')
 
-/usr/bin/codesign --force --sign - --options runtime --timestamp=none "$APP"
+/usr/bin/codesign --force --sign - --options runtime,library --timestamp=none "$APP"
 /usr/bin/codesign --verify --deep --strict --verbose=2 "$APP"
 
 rm -f "$ARCHIVE"

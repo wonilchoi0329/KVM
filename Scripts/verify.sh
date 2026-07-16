@@ -27,8 +27,8 @@ file "$EXECUTABLE"
 "$EXECUTABLE" --help
 
 CODESIGN_DETAILS=$(/usr/bin/codesign -d --verbose=4 "$APP" 2>&1)
-if [[ "$CODESIGN_DETAILS" != *"runtime"* ]]; then
-    print -u2 "Hardened Runtime is not enabled"
+if [[ "$CODESIGN_DETAILS" != *"runtime"* || "$CODESIGN_DETAILS" != *"library-validation"* ]]; then
+    print -u2 "Hardened Runtime and explicit Library Validation are required"
     exit 1
 fi
 ENTITLEMENTS=$(/usr/bin/codesign -d --entitlements :- "$APP" 2>&1 || true)

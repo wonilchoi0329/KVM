@@ -43,7 +43,7 @@ cd KVM
 ./Scripts/verify.sh
 ```
 
-`verify.sh` runs the tests and security checks, then creates the ignored local build at `dist/HostHop.app`. It does not download dependencies.
+`verify.sh` runs the tests and security checks, then creates the ignored local build at `dist/HostHop.app`. It enables Hardened Runtime plus explicit Library Validation and verifies that DYLD library injection is blocked. It does not download dependencies.
 
 If an older HostHop is installed, stop its login item and process before replacing it:
 

@@ -18,4 +18,4 @@ The LG transport dynamically resolves undocumented macOS display functions. Miss
 
 ## Supported builds
 
-Security fixes target the latest source on the default branch. This repository publishes source only. Locally built ad-hoc apps use Hardened Runtime; no binary is represented as Developer ID signed or notarized.
+Security fixes target the latest source on the default branch. This repository publishes source only. Locally built ad-hoc apps use Hardened Runtime with explicit Library Validation; no binary is represented as Developer ID signed or notarized.
